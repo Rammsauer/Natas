@@ -207,6 +207,16 @@ include "includes/secret.inc";
 **Output**
 
 ```html
+<div id="content">
+
+Access granted. The password for natas7 is 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
+<form method="post">
+Input secret: <input name="secret"><br>
+<input type="submit" name="submit">
+</form>
+
+<div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
 ```
 
 ## Natas7
