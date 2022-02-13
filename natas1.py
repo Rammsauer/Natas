@@ -1,3 +1,3 @@
 import natasX
 
-natasX.natasX(1,"gtVrDuiDfck831PqWsLEZy5gyDz1clto")
+print(natasX.natasX(1,"gtVrDuiDfck831PqWsLEZy5gyDz1clto").text)
