@@ -262,7 +262,7 @@ https://overthewire.org/wargames/natas/natas8.html
 > URL:      http://natas8.natas.labs.overthewire.org
 
 **Searchbox Source Code**
-```
+```php
 $encodedSecret = "3d3d516343746d4d6d6c315669563362";
 
 function encodeSecret($secret) {
