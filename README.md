@@ -188,6 +188,19 @@ https://overthewire.org/wargames/natas/natas6.html
 
 > URL:      http://natas6.natas.labs.overthewire.org
 
+**Searchbox Source Code**
+```php
+include "includes/secret.inc";
+
+    if(array_key_exists("submit", $_POST)) {
+        if($secret == $_POST['secret']) {
+        print "Access granted. The password for natas7 is <censored>";
+    } else {
+        print "Wrong secret";
+    }
+    }
+```
+
 ```python
 ```
 
