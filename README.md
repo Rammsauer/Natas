@@ -239,3 +239,15 @@ https://overthewire.org/wargames/natas/natas7.html
 
 ```html
 ```
+
+```
+ _________
+< goodbye >
+ ---------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+```
