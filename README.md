@@ -205,7 +205,7 @@ include "includes/secret.inc";
 natas = natasX
 # print(natas.natasX(6, "aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1").text)
 print(natas.natasX(6, "aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1", endpoint="/includes/secret.inc").text)
-# Enter "FOEIUWGHFEEUHOFUOIU" into the Searchbox it will result in 
+# Enter "FOEIUWGHFEEUHOFUOIU" into the Searchbox it will result in "natas7 is 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9"
 ```
 
 **Output**
