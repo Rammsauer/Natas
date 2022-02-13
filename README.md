@@ -269,6 +269,25 @@ https://overthewire.org/wargames/natas/natas8.html
 ```html
 ```
 
+## Natas9
+https://overthewire.org/wargames/natas/natas9.html
+
+> Natas Level 8 → Level 9
+
+> Username: natas9
+
+> URL:      http://natas9.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
+<br>
+
 ```
  _________
 < goodbye >
