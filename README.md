@@ -299,6 +299,16 @@ print(natas.natasX(8, "DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe").text)
 **Output**
 
 ```html
+<div id="content">
+
+Access granted. The password for natas9 is W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
+<form method="post">
+Input secret: <input name="secret"><br>
+<input type="submit" name="submit">
+</form>
+
+<div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
 ```
 
 ## Natas9
@@ -309,6 +319,23 @@ https://overthewire.org/wargames/natas/natas9.html
 > Username: natas9
 
 > URL:      http://natas9.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
+## Natas10
+https://overthewire.org/wargames/natas/natas10.html
+
+> Natas Level 9 → Level 10
+
+> Username: natas10
+
+> URL:      http://natas10.natas.labs.overthewire.org
 
 ```python
 ```
