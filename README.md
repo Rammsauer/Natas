@@ -277,7 +277,6 @@ if(array_key_exists("submit", $_POST)) {
     }
 }
 ```
-<br>
 Function in php to decode $encodedSecret
 ```
 <?php
@@ -292,6 +291,9 @@ Will result "oubWYf2kBq"
 <br>
 
 ```python
+natas = natasX
+
+print(natas.natasX(8, "DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe").text)
 ```
 
 **Output**
