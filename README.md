@@ -277,9 +277,19 @@ if(array_key_exists("submit", $_POST)) {
     }
 }
 ```
+<br>
 Function in php to decode $encodedSecret
 ```
+<?php
+function decode($s){
+	return base64_decode(strrev(hex2bin($s)));
+}
+
+echo decode("3d3d516343746d4d6d6c315669563362");
+?>
 ```
+Will result "oubWYf2kBq"
+<br>
 
 ```python
 ```
