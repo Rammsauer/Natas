@@ -278,7 +278,7 @@ if(array_key_exists("submit", $_POST)) {
 }
 ```
 Function in php to decode $encodedSecret
-```
+```php
 <?php
 function decode($s){
 	return base64_decode(strrev(hex2bin($s)));
