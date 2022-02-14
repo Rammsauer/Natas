@@ -277,6 +277,9 @@ if(array_key_exists("submit", $_POST)) {
     }
 }
 ```
+Function in php to decode $encodedSecret
+```
+```
 
 ```python
 ```
