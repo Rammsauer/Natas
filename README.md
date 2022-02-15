@@ -451,7 +451,7 @@ function showEveryChar($d, $e) {
 # xor_encrypt works in both ways for decoding and encoding
 # echo decodeData(saveData($defaultdata));
 
-# "ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSFlkrEBZZaAw=" -> array( "showpassword"=>"yes", "bgcolor"=>"#aaaaaa");
+#"ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSFlkrEBZZaAw=" -> array( "showpassword"=>"no", "bgcolor"=>"#aaaaaa");
 #echo base64_decode("ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSFlkrEBZZaAw=") . "<br><br>";
 
 #showEveryChar(base64_decode("ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSFlkrEBZZaAw="), json_encode($defaultdata));
