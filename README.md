@@ -411,6 +411,9 @@ function saveData($d) {
 ```
 
 **Written PHP Code to find the key**
+<br>
+[Kasiski examination](https://en.wikipedia.org/wiki/Kasiski_examination#A_string-based_attack)
+
 ```php
 $defaultdata = array( "showpassword"=>"no", "bgcolor"=>"#aaaaaa");
 
