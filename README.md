@@ -390,6 +390,26 @@ https://overthewire.org/wargames/natas/natas11.html
 
 > URL:      http://natas11.natas.labs.overthewire.org
 
+**InputForm Source Code**
+```php
+function xor_encrypt($in) {
+    $key = '<censored>';
+    $text = $in;
+    $outText = '';
+
+    // Iterate through each character
+    for($i=0;$i<strlen($text);$i++) {
+    $outText .= $text[$i] ^ $key[$i % strlen($key)];
+    }
+
+    return $outText;
+}
+
+function saveData($d) {
+    setcookie("data", base64_encode(xor_encrypt(json_encode($d))));
+}
+```
+
 ```python
 ```
 
