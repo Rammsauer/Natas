@@ -415,6 +415,8 @@ function saveData($d) {
 [Kasiski examination](https://en.wikipedia.org/wiki/Kasiski_examination#A_string-based_attack)
 
 ```php
+<pre>
+<?php
 $defaultdata = array( "showpassword"=>"no", "bgcolor"=>"#aaaaaa");
 
 function xor_encrypt($in) {
@@ -474,6 +476,8 @@ $defaultdata = array( "showpassword"=>"yes", "bgcolor"=>"#caccac");
 
 echo saveData($defaultdata);
 #ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVFsrEhRZKVMK
+?>
+</pre>
 ```
 
 ```python
