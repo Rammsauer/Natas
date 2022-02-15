@@ -410,6 +410,119 @@ function saveData($d) {
 }
 ```
 
+**Written PHP Code to find the key**
+```php
+$defaultdata = array( "showpassword"=>"no", "bgcolor"=>"#aaaaaa");
+
+function xor_encrypt($in) {
+    $key = 'qw8J';
+    $text = $in;
+    $outText = '';
+
+    // Iterate through each character
+    for($i=0;$i<strlen($text);$i++) {
+    	$outText .= $text[$i] ^ $key[$i % strlen($key)];
+    }
+
+    return $outText;
+}
+
+function saveData($d) {
+    return base64_encode(xor_encrypt(json_encode($d)));
+}
+
+function decodeData($d) {
+	return xor_encrypt(base64_decode($d));
+}
+
+function showEveryChar($d, $e) {
+	$text = $e;
+    $cookie = $d;
+    $result = '';
+    
+	for($i=0;$i<strlen($cookie);$i++) {
+    	echo ord($cookie[$i]) . "\t" . $text[$i] . "<br>";
+    }
+}
+
+# xor_encrypt works in both ways for decoding and encoding
+# echo decodeData(saveData($defaultdata));
+
+# "ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSFlkrEBZZaAw=" -> array( "showpassword"=>"yes", "bgcolor"=>"#aaaaaa");
+#echo base64_decode("ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSFlkrEBZZaAw=") . "<br><br>";
+
+#showEveryChar(base64_decode("ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSFlkrEBZZaAw="), json_encode($defaultdata));
+
+#22	a
+#89	a
+#43	a
+#16	a
+#22	a
+#89	a
+#repeat of 22 and 89
+#key = qw8J
+
+#echo xor_encrypt(json_encode($defaultdata)) . "<br><br>";
+
+#echo saveData($defaultdata) . "<br>";
+#echo decodeData("ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSFFkpEhZbaAw=");
+
+$defaultdata = array( "showpassword"=>"yes", "bgcolor"=>"#caccac");
+
+echo saveData($defaultdata);
+#ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVFsrEhRZKVMK
+```
+
+```python
+natas = natasX
+
+#print(natas.natasX(11, "U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK").text)
+print(natas.natasX(11, "U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK", cookies={"data": "ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVFsrEhRZKVMK"}).text)
+```
+
+**Output**
+
+```html
+<div id="content">
+<body style="background: #caccac;">
+Cookies are protected with XOR encryption<br/><br/>
+
+The password for natas12 is EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3<br>
+<form>
+Background color: <input name=bgcolor value="#caccac">
+<input type=submit value="Set color">
+</form>
+
+<div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
+```
+
+## Natas12
+https://overthewire.org/wargames/natas/natas12.html
+
+> Natas Level 11 → Level 12
+
+> Username: natas12
+
+> URL:      http://natas12.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
+## Natas13
+https://overthewire.org/wargames/natas/natas13.html
+
+> Natas Level 12 → Level 13
+
+> Username: natas13
+
+> URL:      http://natas13.natas.labs.overthewire.org
+
 ```python
 ```
 
