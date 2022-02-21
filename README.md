@@ -676,6 +676,9 @@ print(natas.natasX(14, "Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1", endpoint="index.php?d
 **Output**
 
 ```html
+<div id="content">
+Successful login! The password for natas15 is AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J<br><div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
 ```
 
 
