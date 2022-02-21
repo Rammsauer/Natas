@@ -681,7 +681,6 @@ Successful login! The password for natas15 is AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J<b
 </div>
 ```
 
-
 ## Natas15
 https://overthewire.org/wargames/natas/natas15.html
 
@@ -698,6 +697,25 @@ https://overthewire.org/wargames/natas/natas15.html
 
 ```html
 ```
+
+
+## Natas16
+https://overthewire.org/wargames/natas/natas15.html
+
+> Natas Level 15 → Level 16
+
+> Username: natas16
+
+> URL:      http://natas16.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
 
 <br>
 
