@@ -584,6 +584,23 @@ https://overthewire.org/wargames/natas/natas13.html
 ```html
 ```
 
+## Natas14
+https://overthewire.org/wargames/natas/natas14.html
+
+> Natas Level 13 → Level 14
+
+> Username: natas14
+
+> URL:      http://natas14.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
 <br>
 
 ```php
