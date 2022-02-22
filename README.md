@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Natas
 
 https://overthewire.org/wargames/natas/
