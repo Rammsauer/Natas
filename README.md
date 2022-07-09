@@ -1357,7 +1357,7 @@ https://overthewire.org/wargames/natas/natas25.html
 
 **Output**
 
-#Quote
+# Quote
 ```
 You see, no one's going to help you Bubby, because there isn't anybody out 
 there to do it. No one. We're all just complicated arrangements of atoms 
