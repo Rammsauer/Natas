@@ -1,5 +1,3 @@
-[Natas](#Natas)
-
 # Natas
 
 https://overthewire.org/wargames/natas/
